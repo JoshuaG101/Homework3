@@ -73,7 +73,7 @@ export class AprioriAlgorithm {
     // Self-join step
     for (let i = 0; i < items.length; i++) {
       for (let j = i + 1; j < items.length; j++) {
-        const union = [...new Set([...items[i], ...items[j]])].sort();
+        const union = Array.from(new Set([...items[i], ...items[j]])).sort();
         
         if (union.length === k) {
           const key = JSON.stringify(union);
